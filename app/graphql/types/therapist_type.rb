@@ -1,0 +1,16 @@
+# frozen_string_literal: true
+
+module Types
+  class TherapistType < Types::BaseObject
+    field :id, ID, null: false
+    field :address, String
+    field :phone_number, String
+    field :image_url, String
+    field :bio, String
+    field :labels, String
+    field :practice_id, Integer
+    field :created_at, GraphQL::Types::ISO8601DateTime, null: false
+    field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
+    field :name, String
+  end
+end
