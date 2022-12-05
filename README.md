@@ -4,6 +4,28 @@
   <!-- <img src="images/roed_logo_sm.png" alt_text="IOTNBO Logo"><br> -->
 </div>
 
+<!-- Badges -->
+<p>
+  <a href="https://github.com/IOTNBO-Capstone/IOTNBO-BE/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/IOTNBO-Capstone/IOTNBO-BE" alt="contributors" />
+  </a>
+  <a href="">
+    <img src="https://img.shields.io/github/last-commit/IOTNBO-Capstone/IOTNBO-BE" alt="last update" />
+  </a>
+  <a href="https://github.com/IOTNBO-Capstone/IOTNBO-BE/network/members">
+    <img src="https://img.shields.io/github/forks/Louis3797/awesome-readme-template" alt="forks" />
+  </a>
+  <a href="https://github.com/IOTNBO-Capstone/IOTNBO-BE/stargazers">
+    <img src="https://img.shields.io/github/stars/IOTNBO-Capstone/IOTNBO-BE" alt="stars" />
+  </a>
+  <a href="https://github.com/IOTNBO-Capstone/IOTNBO-BE/issues">
+    <img src="https://img.shields.io/github/issues/IOTNBO-Capstone/IOTNBO-BE" alt="open issues" />
+  </a>
+  <a href="https://github.com/IOTNBO-Capstone/IOTNBO-BE/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/IOTNBO-Capstone/IOTNBO-BE.svg" alt="license" />
+  </a>
+</p>
+
 <br></br>
 (Want to hire the devs that worked on this project? Click [this link](#contributors) to jump to our project contributors!)
 
