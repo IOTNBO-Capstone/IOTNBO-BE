@@ -30,6 +30,7 @@ gem 'rack-cors'
 gem 'faraday'
 gem 'jsonapi-serializer'
 gem 'graphql'
+# gem 'graphiql-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -46,7 +47,6 @@ group :development, :test do
   gem 'vcr'
   gem 'webmock'
   gem 'pry'
-  gem 'graphiql-rails'
 end
 
 group :development do
