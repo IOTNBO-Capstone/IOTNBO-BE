@@ -21,7 +21,7 @@ module Types
             end
           end
         end
-        therapists
+        therapists.uniq
       else
         Therapist.all
       end
