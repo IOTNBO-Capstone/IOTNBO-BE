@@ -56,7 +56,7 @@ workflows:
           post-steps:
             - run:
                 name: migrate
-                command: heroku run -a $equilibrium rails db:migrate
+                command: heroku run -a equilibrium rails db:migrate
           filters:
             branches:
               only:
