@@ -76,4 +76,3 @@ RSpec.describe 'create therapist' do
     expect(message).to include("Phone number can't be blank")
   end
 end
-

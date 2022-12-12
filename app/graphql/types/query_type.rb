@@ -17,7 +17,6 @@ module Types
         Therapist.all.each do |therapist|
           labels.each do |label|
             if therapist.labels.include?(label)
-              binding.pry
               therapists << therapist 
             end
           end
