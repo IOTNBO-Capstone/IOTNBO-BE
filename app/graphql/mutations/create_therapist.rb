@@ -21,7 +21,7 @@ class Mutations::CreateTherapist < Mutations::BaseMutation
       else
         {
           therapist: nil,
-          errors: therapist.errors.full_messages
+          errors: therapist.errors.full_messages.uniq
         }
       end
     end

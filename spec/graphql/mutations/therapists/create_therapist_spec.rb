@@ -41,5 +41,39 @@ RSpec.describe 'create therapist' do
     expect(therapist["bio"]).to eq("It's a Bingo!!!")
     expect(therapist["practiceId"]).to eq(@practice_1.id)
   end
+
+  it 'SAD PATH: returns an error if therapist query is incomplete' do
+    @practice_1 = Practice.create!(name: "ABC therapy", website_url: "WWW.ABCD.com")
+
+    query = <<~GQL
+      mutation {
+        createTherapist(input: {
+          name: "Bingo McAllister",
+          address: "888 Your Mom's House Cul-de-Sac",
+          phoneNumber: "",
+          labels: ["Sliding Scale"],
+          imageUrl: "https://www.nonsense.com/bingo.jpg",
+          bio: "It's a Bingo!!!",
+          practiceId: #{@practice_1.id}
+          }) {
+          therapist {
+              id,
+              name,
+              address,
+              phoneNumber,
+              labels,
+              imageUrl,
+              bio,
+              practiceId
+          }
+          errors
+        }
+      }
+    GQL
+
+    result = IotnboBeSchema.execute(query)
+    message = result.dig("data", "createTherapist", "errors")
+    expect(message).to include("Phone number can't be blank")
+  end
 end
 
