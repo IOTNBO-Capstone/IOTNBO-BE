@@ -14,9 +14,9 @@ RSpec.describe Types::QueryType do
     @practice_2 = Practice.create!(name: "Private Practice", website_url: "WWW.bobmckay.com") 
     @practice_3 = Practice.create!(name: "#{Faker::Movies::LordOfTheRings.location} therapy", website_url: Faker::Internet.url) 
 
-    @therapist_1 = Therapist.create!(address: Faker::Address.full_address, phone_number: Faker::PhoneNumber.cell_phone, image_url: Faker::LoremFlickr.image, bio: "here to stay", labels: ["Low Cost", "Works with Addiction"], practice_id: @practice_1.id, name: "Sarah Jones")
-    @therapist_2 = Therapist.create!(address: Faker::Address.full_address, phone_number: Faker::PhoneNumber.cell_phone, image_url: Faker::LoremFlickr.image, bio: "slightly different", labels: ["Sliding Scale", "Low Cost"], practice_id: @practice_1.id, name: "Peter Piper")
-    @therapist_3 = Therapist.create!(address: Faker::Address.full_address, phone_number: Faker::PhoneNumber.cell_phone, image_url: Faker::LoremFlickr.image, bio: "even more different", labels: ["Works with Depression", "Works with Anxiety"], practice_id: @practice_3.id, name: "Bob McKay")
+    @therapist_1 = Therapist.create!(address: Faker::Address.full_address, phone_number: "(222)-222-2222", image_url: Faker::LoremFlickr.image, bio: "here to stay", labels: ["Low Cost", "Works with Addiction"], practice_id: @practice_1.id, name: "Sarah Jones")
+    @therapist_2 = Therapist.create!(address: Faker::Address.full_address, phone_number: "(999)-999-9999", image_url: Faker::LoremFlickr.image, bio: "slightly different", labels: ["Sliding Scale", "Low Cost"], practice_id: @practice_1.id, name: "Peter Piper")
+    @therapist_3 = Therapist.create!(address: Faker::Address.full_address, phone_number: "888-888-8888", image_url: Faker::LoremFlickr.image, bio: "even more different", labels: ["Works with Depression", "Works with Anxiety"], practice_id: @practice_3.id, name: "Bob McKay")
   end
 
   describe 'display therapist' do

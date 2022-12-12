@@ -9,15 +9,12 @@ RSpec.describe Therapist, type: :model do
     it { should validate_presence_of(:bio) }
     it { should validate_presence_of(:labels) }
     it { should validate_presence_of(:name) }
-    it { should allow_value("3035069305").for(:phone_number) }
+    it { should allow_value("303-506-9305").for(:phone_number) }
+    it { should allow_value("(303)-506-9305").for(:phone_number) }
     it { should_not allow_value("30#5069305").for(:phone_number) }
   end
 
   describe "relationships" do
     it { should belong_to :practice }
-  end
-
-  describe "format" do
-
   end
 end

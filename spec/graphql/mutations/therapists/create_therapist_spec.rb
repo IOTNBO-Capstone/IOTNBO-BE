@@ -9,7 +9,7 @@ RSpec.describe 'create therapist' do
         createTherapist(input: {
           name: "Bingo McAllister",
           address: "888 Your Mom's House Cul-de-Sac",
-          phoneNumber: "5555555555",
+          phoneNumber: "555-555-5555",
           labels: ["Sliding Scale"],
           imageUrl: "https://www.nonsense.com/bingo.jpg",
           bio: "It's a Bingo!!!",
