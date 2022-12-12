@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require 'pry'
+# require 'pry'
 module Types
   class TherapistType < Types::BaseObject
     field :id, ID, null: false
