@@ -9,7 +9,7 @@ RSpec.describe 'create therapist' do
         createTherapist(input: {
           name: "Bingo McAllister",
           address: "888 Your Mom's House Cul-de-Sac",
-          phoneNumber: "555-555-5555",
+          phoneNumber: "5555555555",
           labels: ["Sliding Scale"],
           imageUrl: "https://www.nonsense.com/bingo.jpg",
           bio: "It's a Bingo!!!",
@@ -72,7 +72,9 @@ RSpec.describe 'create therapist' do
     GQL
 
     result = IotnboBeSchema.execute(query)
+
     message = result.dig("data", "createTherapist", "errors")
     expect(message).to include("Phone number can't be blank")
+    expect(result["data"]["createTherapist"]["therapist"]).to eq(nil)
   end
 end
