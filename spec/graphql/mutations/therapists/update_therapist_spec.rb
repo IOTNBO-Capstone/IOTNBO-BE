@@ -32,4 +32,8 @@ RSpec.describe 'update therapist' do
     expect(therapist["bio"]).to eq("Sarah's updated bio")
     expect(therapist["bio"]).to_not eq("here to stay")
   end
+  
+  it 'shouldnt allow invalid phone_number formats'
+  it 'should be able to update labels method'
+  it 'shouldnt allow update for invalid therapist_id'
 end
