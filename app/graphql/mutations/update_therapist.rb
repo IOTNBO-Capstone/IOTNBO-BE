@@ -16,7 +16,6 @@ class Mutations::UpdateTherapist < Mutations::BaseMutation
 
     def resolve(id:, **attributes)
       therapist = Therapist.find(id)
-
       if therapist.update(attributes)
         {
           therapist: therapist,
