@@ -11,5 +11,5 @@ class Therapist < ApplicationRecord
 
   validates_format_of :phone_number,
                       :with => /\(?[0-9]{3}\)?-[0-9]{3}-[0-9]{4}/,
-                      :message => "Phone numbers must be in xxxxxxxxxx format (ten numeric digits without spaces or symbols)."
+                      :message => "must be in xxxxxxxxxx format (ten numeric digits without spaces or symbols)."
 end
