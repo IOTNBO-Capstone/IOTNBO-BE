@@ -8,23 +8,23 @@ class Mutations::UpdateTherapist < Mutations::BaseMutation
     argument :labels, [String], required: false
     argument :id, Integer, required: true
 
+    
     type Types::TherapistType
+    field :therapist, Types::TherapistType
     field :errors, [String], null: false
+
 
     def resolve(id:, **attributes)
         therapist = Therapist.find(id)
         
-        x = therapist.update(attributes)
-
-        if x.save
+        if therapist.update(attributes)
            {
-            therapist: x,
+            therapist: therapist,
             errors: []
             }
         else
             {
-            therapist: nil,
-            errors: x.errors.full_messages.uniq
+            therapist: "Unable to save update, invaliad data type or therapist doesn't exits"
             }
         end
     end
