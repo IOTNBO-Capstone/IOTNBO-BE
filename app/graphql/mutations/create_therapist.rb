@@ -10,8 +10,8 @@ class Mutations::CreateTherapist < Mutations::BaseMutation
     field :therapist, Types::TherapistType
     field :errors, [String], null: false
   
-    def resolve(name:, practice_id:, address:, phone_number:, image_url:, bio:, labels:)
-      therapist = Therapist.new(name: name, practice_id: practice_id, address: address, phone_number: phone_number, image_url: image_url, bio: bio, labels: labels)
+    def resolve(practice_id:, **attributes)
+      therapist = Practice.find(practice_id).therapists.new(attributes)
   
       if therapist.save
         {

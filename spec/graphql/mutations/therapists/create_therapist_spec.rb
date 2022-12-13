@@ -70,9 +70,8 @@ RSpec.describe 'create therapist' do
         }
       }
     GQL
-
     result = IotnboBeSchema.execute(query)
-
+    
     message = result.dig("data", "createTherapist", "errors")
     expect(message).to include("Phone number can't be blank")
     expect(result["data"]["createTherapist"]["therapist"]).to eq(nil)
