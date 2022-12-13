@@ -15,17 +15,18 @@ class Mutations::UpdateTherapist < Mutations::BaseMutation
 
 
     def resolve(id:, **attributes)
-        therapist = Therapist.find(id)
-        
-        if therapist.update(attributes)
-           {
-            therapist: therapist,
-            errors: []
-            }
-        else
-            {
-            therapist: "Unable to save update, invaliad data type or therapist doesn't exits"
-            }
-        end
+      therapist = Therapist.find(id)
+
+      if therapist.update(attributes)
+        {
+          therapist: therapist,
+          errors: []
+        }
+      else
+        {
+          therapist: nil,
+          errors: therapist.errors.full_messages.uniq
+        }
+      end
     end
 end
