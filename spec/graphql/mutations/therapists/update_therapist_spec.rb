@@ -63,7 +63,38 @@ RSpec.describe 'update therapist' do
     therapist = Therapist.find(therapist_1.id)
     expect(therapist.phone_number).to eq("(333)-333-3333")
   end
+
+  it 'should be able to update labels method' do
+    practice_1 = Practice.create!(name: "ABC therapy", website_url: "WWW.ABCD.com") 
+    therapist_1 = Therapist.create!(address: Faker::Address.full_address, phone_number: "(333)-333-3333", image_url: Faker::LoremFlickr.image, bio: "here to stay", labels: ["Low Cost", "Sliding Scale", "Works with Anxiety"], practice_id: practice_1.id, name: "Sarah Jones")
+
+    mutation = <<~GQL
+      mutation {
+        updateTherapist(input: {
+          id: #{therapist_1.id},
+          labels: ["Low Cost", "Sliding Scale", "Works with Depression"]
+          }) {
+            therapist {
+                name,
+                address,
+                phoneNumber,
+                labels,
+                imageUrl,
+                bio,
+                practiceId
+            }
+            errors
+          }
+        }
+      GQL
+
+    result = IotnboBeSchema.execute(mutation)
+    therapist = result.dig("data", "updateTherapist", "therapist")
+    expect(therapist["labels"]).to eq("[\"Low Cost\", \"Sliding Scale\", \"Works with Depression\"]")
+    expect(therapist["labels"]).to_not include("Works with Anxiety")
+  end
   
-  it 'should be able to update labels method'
-  it 'shouldnt allow update for invalid therapist_id'
+  it 'shouldnt allow update for invalid therapist_id' do
+
+  end
 end
