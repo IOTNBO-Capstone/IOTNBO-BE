@@ -8,4 +8,8 @@ class Therapist < ApplicationRecord
   validates :labels, presence: true
   validates :name, presence: true
   validates :phone_number, presence: true
+
+  validates_format_of :phone_number,
+                      :with => /\(?[0-9]{3}\)?-[0-9]{3}-[0-9]{4}/,
+                      :message => "must be in xxxxxxxxxx format (ten numeric digits without spaces or symbols)."
 end
