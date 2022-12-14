@@ -61,7 +61,7 @@ Default host is `http://localhost:3000`
 
 <br></br>
 ## Database Schema
-<!-- ![Database Schema Image](/images/roed_to_aid_database_schema.png "Database Schema Image") -->
+![Screen Shot 2022-12-03 at 11 23 41 AM](https://user-images.githubusercontent.com/106449394/207664849-57cc33b1-520e-4d46-b5c9-2282531f8d0c.png)
 
 <br></br>
 ## Endpoints
